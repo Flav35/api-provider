@@ -29,9 +29,7 @@ router.get('/geoip/country/:ip', function(req, res) {
 			});
 			return;
 		}
-		res.json({
-			countryOutput
-		});
+		res.json(countryOutput);
 	});
 });
 
@@ -44,9 +42,7 @@ router.get('/geoip/city/:ip', function(req, res) {
 			});
 			return;
 		}
-		res.json({
-			cityOutput
-		});
+		res.json(cityOutput);
 	});
 });
 
