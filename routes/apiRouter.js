@@ -30,7 +30,7 @@ router.get('/geoip/country/:ip', function(req, res) {
 			return;
 		}
 		res.json({
-			country: countryOutput
+			countryOutput
 		});
 	});
 });
@@ -45,7 +45,7 @@ router.get('/geoip/city/:ip', function(req, res) {
 			return;
 		}
 		res.json({
-			city: cityOutput
+			cityOutput
 		});
 	});
 });
@@ -84,7 +84,7 @@ router.get('/geoip/location/:ip', function(req, res) {
 /* Default, send 404 not found */
 router.use(function(req,res,err){
 	res.json({
-		error:"Not Found"
+		error:'Not Found'
 	});
 });
 
