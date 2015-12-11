@@ -4,7 +4,7 @@ var sys = require('sys');
 var geoipProvider = require('../src/geoipProvider');
 
 /* GET GeoIP All */
-router.get('/geoip/:ip', function(req, res) {
+router.get('/:ip', function(req, res) {
 	geoipProvider.getAll(req.params.ip, function(info, err){
 		if(err!==null){
 			res.json({
@@ -21,7 +21,7 @@ router.get('/geoip/:ip', function(req, res) {
 });
 
 /* GET GeoIP Country only */
-router.get('/geoip/country/:ip', function(req, res) {
+router.get('/country/:ip', function(req, res) {
 	geoipProvider.getCountry(req.params.ip, function(countryOutput,err){
 		if(err!==null){
 			res.json({
@@ -34,7 +34,7 @@ router.get('/geoip/country/:ip', function(req, res) {
 });
 
 /* GET GeoIP City only */
-router.get('/geoip/city/:ip', function(req, res) {
+router.get('/city/:ip', function(req, res) {
 	geoipProvider.getCity(req.params.ip, function(cityOutput,err){
 		if(err!==null){
 			res.json({
@@ -47,7 +47,7 @@ router.get('/geoip/city/:ip', function(req, res) {
 });
 
 /* GET GeoIP AS only */
-router.get('/geoip/as/:ip', function(req, res) {
+router.get('/as/:ip', function(req, res) {
 	geoipProvider.getAs(req.params.ip, function(asOutput,err){
 		if(err!==null){
 			res.json({
@@ -62,7 +62,7 @@ router.get('/geoip/as/:ip', function(req, res) {
 });
 
 /* GET Latitude and Longitude only */
-router.get('/geoip/location/:ip', function(req, res) {
+router.get('/location/:ip', function(req, res) {
 	geoipProvider.getLocation(req.params.ip, function(lat,lon,err){
 		if(err!==null){
 			res.json({

@@ -6,8 +6,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var webRouter = require('./routes/webRouter');
-var apiRouter = require('./routes/apiRouter');
-var defaultRouter = require('./routes/default');
+var geoipRouter = require('./routes/geoipRouter');
+var geoipNodeRouter = require('./routes/geoipNodeRouter');
+var defaultRouter = require('./routes/defaultRouter');
 
 var app = express();
 
@@ -24,10 +25,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', webRouter);
-app.use('/api', apiRouter);
-app.use('/',defaultRouter);
+app.use('/api/geoip', geoipRouter);
+app.use('/api/geoip-node',geoipNodeRouter);
 
-// error handlers
+// Default Router. Always at last position
+app.use('/',defaultRouter);
 
 // development error handler
 // will print stacktrace
