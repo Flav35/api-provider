@@ -77,11 +77,5 @@ router.get('/geoip/location/:ip', function(req, res) {
 	});
 });
 
-/* Default, send 404 not found */
-router.use(function(req,res,err){
-	res.json({
-		error:'Not Found'
-	});
-});
 
 module.exports = router;
