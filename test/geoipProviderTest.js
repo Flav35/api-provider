@@ -6,6 +6,7 @@ describe('geoipProvider', function() {
   var badIP = '256.1.5.56';
   var badIP2 = 'edza.48d.d.469';
   var badIP3 = '""ofr\'"})?$^odpza;;,';
+  var errorMessage = 'IP does not comply !';
 
   describe('#getAll(ip,callback)',function() {
     var infoKeys = {
@@ -35,24 +36,27 @@ describe('geoipProvider', function() {
     it('should return an error for ip '+badIP, function(done) {
       geoipProvider.getAll(badIP,function(informations,error){
         assert.isNull(informations);
-        assert.isNotNull(error,'IP or host does not comply !');
-        done();
+        assert.isNotNull(error);
+
+      assert.deepEqual(error,errorMessage);  done();
       });
     });
 
     it('should return an error for ip '+badIP2, function(done) {
       geoipProvider.getAll(badIP2,function(informations,error){
         assert.isNull(informations);
-        assert.isNotNull(error,'IP or host does not comply !');
-        done();
+        assert.isNotNull(error);
+
+      assert.deepEqual(error,errorMessage);  done();
       });
     });
 
     it('should return an error for ip '+badIP3, function(done) {
       geoipProvider.getAll(badIP3,function(informations,error){
         assert.isNull(informations);
-        assert.isNotNull(error,'IP or host does not comply !');
-        done();
+        assert.isNotNull(error);
+
+      assert.deepEqual(error,errorMessage);  done();
       });
     });
   });
@@ -74,24 +78,27 @@ describe('geoipProvider', function() {
     it('should return an error for ip '+badIP, function(done) {
       geoipProvider.getCountry(badIP,function(informations,error){
         assert.isNull(informations);
-        assert.isNotNull(error,'IP or host does not comply !');
-        done();
+        assert.isNotNull(error);
+
+      assert.deepEqual(error,errorMessage);  done();
       });
     });
 
     it('should return an error for ip '+badIP2, function(done) {
       geoipProvider.getCountry(badIP2,function(informations,error){
         assert.isNull(informations);
-        assert.isNotNull(error,'IP or host does not comply !');
-        done();
+        assert.isNotNull(error);
+
+      assert.deepEqual(error,errorMessage);  done();
       });
     });
 
     it('should return an error for ip '+badIP3, function(done) {
       geoipProvider.getCountry(badIP3,function(informations,error){
         assert.isNull(informations);
-        assert.isNotNull(error,'IP or host does not comply !');
-        done();
+        assert.isNotNull(error);
+
+      assert.deepEqual(error,errorMessage);  done();
       });
     });
   });
@@ -116,24 +123,27 @@ describe('geoipProvider', function() {
     it('should return an error for ip '+badIP, function(done) {
       geoipProvider.getCity(badIP,function(informations,error){
         assert.isNull(informations);
-        assert.isNotNull(error,'IP or host does not comply !');
-        done();
+        assert.isNotNull(error);
+
+      assert.deepEqual(error,errorMessage);  done();
       });
     });
 
     it('should return an error for ip '+badIP2, function(done) {
       geoipProvider.getCity(badIP2,function(informations,error){
         assert.isNull(informations);
-        assert.isNotNull(error,'IP or host does not comply !');
-        done();
+        assert.isNotNull(error);
+
+      assert.deepEqual(error,errorMessage);  done();
       });
     });
 
     it('should return an error for ip '+badIP3, function(done) {
       geoipProvider.getCity(badIP3,function(informations,error){
         assert.isNull(informations);
-        assert.isNotNull(error,'IP or host does not comply !');
-        done();
+        assert.isNotNull(error);
+
+      assert.deepEqual(error,errorMessage);  done();
       });
     });
 
@@ -152,24 +162,27 @@ describe('geoipProvider', function() {
     it('should return an error for ip '+badIP, function(done) {
       geoipProvider.getAs(badIP,function(informations,error){
         assert.isNull(informations);
-        assert.isNotNull(error,'IP or host does not comply !');
-        done();
+        assert.isNotNull(error);
+
+      assert.deepEqual(error,errorMessage);  done();
       });
     });
 
     it('should return an error for ip '+badIP2, function(done) {
       geoipProvider.getAs(badIP2,function(informations,error){
         assert.isNull(informations);
-        assert.isNotNull(error,'IP or host does not comply !');
-        done();
+        assert.isNotNull(error);
+
+      assert.deepEqual(error,errorMessage);  done();
       });
     });
 
     it('should return an error for ip '+badIP3, function(done) {
       geoipProvider.getAs(badIP3,function(informations,error){
         assert.isNull(informations);
-        assert.isNotNull(error,'IP or host does not comply !');
-        done();
+        assert.isNotNull(error);
+
+      assert.deepEqual(error,errorMessage);  done();
       });
     });
 
@@ -187,25 +200,31 @@ describe('geoipProvider', function() {
     });
 
     it('should return an error for ip '+badIP, function(done) {
-      geoipProvider.getLocation(badIP,function(informations,error){
-        assert.isNull(informations);
-        assert.isNotNull(error,'IP or host does not comply !');
+      geoipProvider.getLocation(badIP,function(lat,long,error){
+        assert.isNull(lat);
+        assert.isNull(long);
+        assert.isNotNull(error);
+        assert.deepEqual(error,errorMessage);
         done();
       });
     });
 
     it('should return an error for ip '+badIP2, function(done) {
-      geoipProvider.getLocation(badIP2,function(informations,error){
-        assert.isNull(informations);
-        assert.isNotNull(error,'IP or host does not comply !');
+      geoipProvider.getLocation(badIP2,function(lat,long,error){
+        assert.isNull(lat);
+        assert.isNull(long);
+        assert.isNotNull(error);
+        assert.deepEqual(error,errorMessage);
         done();
       });
     });
 
     it('should return an error for ip '+badIP3, function(done) {
-      geoipProvider.getLocation(badIP3,function(informations,error){
-        assert.isNull(informations);
-        assert.isNotNull(error,'IP or host does not comply !');
+      geoipProvider.getLocation(badIP3,function(lat,long,error){
+        assert.isNull(lat);
+        assert.isNull(long);
+        assert.isNotNull(error);
+        assert.deepEqual(error,errorMessage);
         done();
       });
     });

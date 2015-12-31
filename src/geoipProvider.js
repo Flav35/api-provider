@@ -17,7 +17,7 @@ var exec = require('child_process').exec;
 /* Private */
 var computeErrors = computeErrors;
 var ipMatchRegEx = ipMatchRegEx;
-var doesNotComplyMessage = 'IP or host does not comply !';
+var doesNotComplyMessage = 'IP does not comply !';
 
 /* Public */
 var publicFunctions = {
@@ -196,7 +196,7 @@ function getLocation(ip, callback) {
 		});
 	}else{
 		/* Error Callback */
-		callback(null,doesNotComplyMessage);
+		callback(null,null,doesNotComplyMessage);
 	}
 }
 
