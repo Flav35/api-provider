@@ -4,6 +4,7 @@
 
 var sys  = require('sys');
 var exec = require('child_process').exec;
+var geoip-lite = require('geoip-lite');
 
 //////////////////
 // End Requires //
@@ -220,6 +221,24 @@ function getAs(ip, callback) {
 
 		});
 	}else{
+		callback(null,doesNotComplyMessage);
+	}
+}
+
+/**
+ * Test
+ * @param  {String}   ip       IP
+ * @param  {Function} callback Callback function : callback(informations,error)
+ */
+function testGeoip(ip, callback){
+	if(ipMatchRegEx(ip)){
+		/* Success Callback */
+		callback(
+			geoip-lite.lookup(ip),
+			null
+		);
+	}else{
+		/* Error Callback */
 		callback(null,doesNotComplyMessage);
 	}
 }
