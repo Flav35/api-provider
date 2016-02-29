@@ -4,7 +4,7 @@
 
 var sys  = require('sys');
 var exec = require('child_process').exec;
-var geoip-lite = require('geoip-lite');
+var geoiplite = require('geoip-lite');
 
 //////////////////
 // End Requires //
