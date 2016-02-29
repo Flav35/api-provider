@@ -224,21 +224,3 @@ function getAs(ip, callback) {
 		callback(null,doesNotComplyMessage);
 	}
 }
-
-/**
- * Test
- * @param  {String}   ip       IP
- * @param  {Function} callback Callback function : callback(informations,error)
- */
-function testGeoip(ip, callback){
-	if(ipMatchRegEx(ip)){
-		/* Success Callback */
-		callback(
-			geoip-lite.lookup(ip),
-			null
-		);
-	}else{
-		/* Error Callback */
-		callback(null,doesNotComplyMessage);
-	}
-}

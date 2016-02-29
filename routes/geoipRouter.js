@@ -78,19 +78,4 @@ router.get('/location/:ip', function(req, res) {
 });
 
 
-
-/* GET Latitude and Longitude only */
-router.get('/test/:ip', function(req, res) {
-	geoipProvider.testGeoip(req.params.ip, function(infos,err){
-		if(err!==null){
-			res.jsonp({
-				error:err
-			});
-			return;
-		}
-		res.jsonp(infos);
-	});
-});
-
-
 module.exports = router;
