@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', webRouter);
 app.use('/api/geoip', geoipRouter);
-app.use('/api/geoip-node',geoipNodeRouter);
+app.use('/api/ip',geoipNodeRouter);
 
 // Default Router. Always at last position
 app.use('/',defaultRouter);
