@@ -7,9 +7,9 @@ var ipHostComply = require('../src/ipHostComply');
 /* GET GeoIP All */
 router.get('/:ip', function(req, res) {
 	if(!ipHostComply.comply(req.params.ip)){
-		res.json({
-			error:'IP or host does not comply !'
-		});
+		res.json(
+			ipHostComply.message()
+		);
 		return;
 	}
 	res.json(
@@ -20,9 +20,9 @@ router.get('/:ip', function(req, res) {
 /* GET GeoIP Country only */
 router.get('/country/:ip', function(req, res) {
 	if(!ipHostComply.comply(req.params.ip)){
-		res.json({
-			error:'IP or host does not comply !'
-		});
+		res.json(
+			ipHostComply.message()
+		);
 		return;
 	}
 	res.json({
@@ -33,9 +33,9 @@ router.get('/country/:ip', function(req, res) {
 /* GET GeoIP Region only */
 router.get('/region/:ip', function(req, res) {
 	if(!ipHostComply.comply(req.params.ip)){
-		res.json({
-			error:'IP or host does not comply !'
-		});
+		res.json(
+			ipHostComply.message()
+		);
 		return;
 	}
 	res.json({
@@ -46,9 +46,9 @@ router.get('/region/:ip', function(req, res) {
 /* GET GeoIP City only */
 router.get('/city/:ip', function(req, res) {
 	if(!ipHostComply.comply(req.params.ip)){
-		res.json({
-			error:'IP or host does not comply !'
-		});
+		res.json(
+			ipHostComply.message()
+		);
 		return;
 	}
 	res.json({
@@ -60,9 +60,9 @@ router.get('/city/:ip', function(req, res) {
 /* GET Latitude and Longitude only */
 router.get('/location/:ip', function(req, res) {
 	if(!ipHostComply.comply(req.params.ip)){
-		res.json({
-			error:'IP or host does not comply !'
-		});
+		res.json(
+			ipHostComply.message()
+		);
 		return;
 	}
 	res.json({

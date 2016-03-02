@@ -24,9 +24,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', webRouter);
 app.use('/api/geoip', geoipRouter);
-app.use('/api/ip',geoipNodeRouter);
+app.use('/geoip',geoipNodeRouter);
 
 // Default Router. Always at last position
 app.use('/',defaultRouter);
