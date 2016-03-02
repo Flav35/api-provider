@@ -24,7 +24,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/api/geoip', geoipRouter);
+/* TODO: Remove geoipProvider, and UT geoipNodeRouter */
+//app.use('/api/geoip', geoipRouter);
 app.use('/geoip',geoipNodeRouter);
 
 // Default Router. Always at last position
