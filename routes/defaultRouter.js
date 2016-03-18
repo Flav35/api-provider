@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var path = require('path');
+var mime = require('mime');
 
 /* GET angularJSPDF */
 router.get('/angularjs', function(req, res){
