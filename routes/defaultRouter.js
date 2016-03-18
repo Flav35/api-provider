@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 /* GET angularJSPDF */
-app.get('/angularjs', function(req, res){
+router.get('/angularjs', function(req, res){
 
   var file = '/opt/ninjaSquad_AngularJS.pdf';
 
