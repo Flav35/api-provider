@@ -1,71 +1,49 @@
 # API provider
 
 ## GeoIP API
-Provide informations about IP/Host.
+Provide informations about IP.
 Return data into JSON format.
-### /api/geoip/:ipOrHost
-Provide all informations about IP/Host
+### /geoip/:ip
+Provide all informations about IP
 
 *Response :*
 ```
 {
-  country:{
-    code
-    name
-  },
-  city:{
-    name1,
-    name2,
-    postal,
-    latitude,
-    longitude,
-  },
-  as
+  range:[min,max],
+  country,
+  region,
+  city,
+  ll: [latitude,longitude],
+  metro
 }
 ```
 
-### /api/geoip/country/:ipOrHost
-Provide IP/Host's country informations
+### /geoip/country/:ip
+Provide IP's country informations
 
 *Response :*
 ```
 {
-  code,
   name
 }
 ```
 
-### /api/geoip/city/:ipOrHost
-Provide IP/Host's city informations
+### /geoip/city/:ip
+Provide IP's city informations
 
 *Response :*
 ```
 {
-  name1,
-  name2,
-  postal,
-  latitude,
-  longitude
+  name
 }
 ```
 
-### /api/geoip/as/:ipOrHost
-Provide IP/Host's city informations
+### /geoip/location/:ip
+Provide IP's city informations
 
 *Response :*
 ```
 {
-  as
-}
-```
-
-### /api/geoip/location/:ipOrHost
-Provide IP/Host's city informations
-
-*Response :*
-```
-{
-  latitude,
-  longitude
+  location:[latitude, longitude]
 }
 ```
